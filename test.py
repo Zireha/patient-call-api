@@ -1,4 +1,4 @@
-from patient_call import call_patient as call
+from call_queue import call_patient as call
 
 first_name = "Darmono"
 second_name = "Temanggung"
