@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api.call_queue import call_patient
+from call_queue import call_patient
 import os
 
 app = FastAPI()
