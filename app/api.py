@@ -10,3 +10,7 @@ def get_call_voice(first_name:str, second_name:str, queue:str, room:str):
     file_queue = queue + ".wav"
     path = os.path.join("..\PatientCall\\voices\\", file_queue)
     return {"path": path}
+
+@app.get('/hello')
+def hello():
+    return {'message' : 'Hello!'}
