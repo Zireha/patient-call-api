@@ -1,8 +1,12 @@
 from fastapi import FastAPI
-from app.call_queue import call_patient
+from call_queue import call_patient
 import os
 
 app = FastAPI()
+
+@app.get('/')
+def hello():
+    return{'message' : '200'}
 
 @app.get('/queue/call')
 def get_call_voice(first_name:str, second_name:str, queue:str, room:str):
