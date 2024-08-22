@@ -1,2 +1,4 @@
 fastapi
 gtts
+python-dotenv
+uvicorn
