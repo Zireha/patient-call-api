@@ -2,3 +2,4 @@ fastapi
 gtts
 python-dotenv
 uvicorn
+azure-storage-blob

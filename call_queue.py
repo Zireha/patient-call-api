@@ -1,6 +1,11 @@
 from gtts import gTTS as tts
 import os
+from io import BytesIO
 
-def call_patient(first_name, second_name,  room, queue_number):
-    call = tts("Nomor antrian"+ queue_number + ", atas nama " + first_name + second_name + "," + "Silahkan menuju" + room, lang='id')
-    return call.save("..\PatientCall\\voices\\"+queue_number+".wav")
+
+def call_patient(name,  room, queue_number):
+    call = tts("Nomor antrian"+ queue_number + ", atas nama " + name + "," + "Silahkan menuju" + room, lang='id')
+    audio_buffer = BytesIO()
+    tts.write_to_fp(audio_buffer)
+    audio_buffer.seek(0)
+    return audio_buffer

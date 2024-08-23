@@ -1,12 +1,15 @@
 from fastapi import FastAPI
 from call_queue import call_patient
 import os
+from azure.storage.blob import BlobServiceClient as BSC
 
 app = FastAPI()
 
 @app.get('/')
 def hello():
-    return{'message' : '200'}
+    return{'message' : 'success',
+           'response status' : '200'
+           }
 
 @app.get('/queue/call')
 def get_call_voice(first_name:str, second_name:str, queue:str, room:str):
